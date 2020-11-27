@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MaerlutkeadS</title>
+    <link>https://github.com/</link>
+    <description>Recent content on MaerlutkeadS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Nov 2020 17:30:15 +0800</lastBuildDate><atom:link href="https://github.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Firt Post</title>
+      <link>https://github.com/2020/11/the-firt-post/</link>
+      <pubDate>Fri, 27 Nov 2020 17:30:15 +0800</pubDate>
+      
+      <guid>https://github.com/2020/11/the-firt-post/</guid>
+      <description>The first post of this blog.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://github.com/about/</link>
+      <pubDate>Fri, 27 Nov 2020 17:04:53 +0800</pubDate>
+      
+      <guid>https://github.com/about/</guid>
+      <description>About the writer I&amp;rsquo;m akamayu, a computer science student in NTHU Taiwan. Even though this is a Japanese nickname, I&amp;rsquo;m a Taiwanese. I love exploring new stuff and curry rice 🍛.
+About this blog The main goal of is to leave some bread crumbs of my life, as a proof of existence.
+Three major directions of this blog:
+ Life Techincal Notes Learning Notes  I hope this time the habit of recording life would last.
+2020 winter</description>
+    </item>
+    
+  </channel>
+</rss>
