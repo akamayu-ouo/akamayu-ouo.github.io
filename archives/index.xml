@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archives on MaerlutkeadS</title>
-    <link>https://github.com/archives/</link>
+    <link>https://akamayu-ouo.github.io/archives/</link>
     <description>Recent content in Archives on MaerlutkeadS</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://github.com/archives/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://akamayu-ouo.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
