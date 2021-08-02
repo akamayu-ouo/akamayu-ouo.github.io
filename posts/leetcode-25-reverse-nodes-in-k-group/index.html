@@ -1,9 +1,74 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>[LeetCode] 25: Reverse Nodes in k-Group - MaerlutkeadS</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta property="og:image" content><meta property="og:title" content="[LeetCode] 25: Reverse Nodes in k-Group"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-22T17:39:40+08:00"><meta property="article:modified_time" content="2021-07-22T17:39:40+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="[LeetCode] 25: Reverse Nodes in k-Group"><meta name=twitter:description content><script src=https://akamayu-ouo.github.io/js/feather.min.js></script><link href=https://akamayu-ouo.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://akamayu-ouo.github.io/css/main.b81ecc221520255fd37e11500c217a1fa6fad6e7dc32c2960f2b8d62c1de15d5.css><link rel=stylesheet type=text/css href=https://akamayu-ouo.github.io/css/dark.e2614a3a266b191b41b67f03b6c9b01f5d5f5a4d7d08a12e0400278dafe57452.css media="(prefers-color-scheme: dark)"></head><body><div class=content><header><div class=main><a href=https://akamayu-ouo.github.io/>MaerlutkeadS</a></div><nav><a href=/>Home</a>
-<a href=/posts>All posts</a>
-<a href=/about>About</a>
-<a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>[LeetCode] 25: Reverse Nodes in k-Group</h1><div class=meta>Posted on Jul 22, 2021</div></div><section class=body><ul><li>Problem Link: <a href=https://leetcode.com/problems/reverse-nodes-in-k-group>[↗]</a></li><li>Difficulty: 🔴 Hard</li><li>Problem description:</li></ul><blockquote><p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>[LeetCode] 25: Reverse Nodes in k-Group - MaerlutkeadS</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="[LeetCode] 25: Reverse Nodes in k-Group" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-22T17:39:40+08:00" />
+<meta property="article:modified_time" content="2021-07-22T17:39:40+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[LeetCode] 25: Reverse Nodes in k-Group"/>
+<meta name="twitter:description" content=""/>
+<script src="https://akamayu-ouo.github.io/js/feather.min.js"></script>
+	
+	
+        <link href="https://akamayu-ouo.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://akamayu-ouo.github.io/css/main.b81ecc221520255fd37e11500c217a1fa6fad6e7dc32c2960f2b8d62c1de15d5.css" />
+		<link rel="stylesheet" type="text/css" href="https://akamayu-ouo.github.io/css/dark.e2614a3a266b191b41b67f03b6c9b01f5d5f5a4d7d08a12e0400278dafe57452.css" media="(prefers-color-scheme: dark)" />
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://akamayu-ouo.github.io/">MaerlutkeadS</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+
+		<div class="title">
+			<h1 class="title">[LeetCode] 25: Reverse Nodes in k-Group</h1>
+			<div class="meta">Posted on Jul 22, 2021</div>
+		</div>
+		
+
+		<section class="body">
+			<ul>
+<li>Problem Link: <a href="https://leetcode.com/problems/reverse-nodes-in-k-group">[↗]</a></li>
+<li>Difficulty: 🔴 Hard</li>
+<li>Problem description:</li>
+</ul>
+<blockquote>
+<p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
 k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
-You may not alter the values in the list&rsquo;s nodes, only nodes themselves may be changed.</p></blockquote><ol><li><p>Example 1:</p><pre><code class=language-graphviz data-lang=graphviz>digraph G{
+You may not alter the values in the list&rsquo;s nodes, only nodes themselves may be changed.</p>
+</blockquote>
+<ol>
+<li>
+<p>Example 1:</p>
+<pre><code class="language-graphviz" data-lang="graphviz">digraph G{
     rankdir=LR;
     nodesep=.3;
     node[shape=none];
@@ -26,7 +91,10 @@ You may not alter the values in the list&rsquo;s nodes, only nodes themselves ma
 }
 </code></pre><pre><code>Input: head = [1,2,3,4,5], k = 2
 Output: [2,1,4,3,5]
-</code></pre></li><li><p>Example 2:</p><pre><code class=language-graphviz data-lang=graphviz>digraph G{
+</code></pre></li>
+<li>
+<p>Example 2:</p>
+<pre><code class="language-graphviz" data-lang="graphviz">digraph G{
     rankdir=LR;
     nodesep=.3;
     node[shape=none];
@@ -49,7 +117,10 @@ Output: [2,1,4,3,5]
 }
 </code></pre><pre><code>Input: head = [1,2,3,4,5], k = 3
 Output: [3,2,1,4,5]
-</code></pre></li><li><p>Example 3:</p><pre><code class=language-graphviz data-lang=graphviz>digraph G{
+</code></pre></li>
+<li>
+<p>Example 3:</p>
+<pre><code class="language-graphviz" data-lang="graphviz">digraph G{
     rankdir=LR;
     nodesep=.3;
     node[shape=none];
@@ -69,88 +140,177 @@ Output: [3,2,1,4,5]
 }
 </code></pre><pre><code>Input: head = [1,2,3,4,5], k = 1
 Output: [1,2,3,4,5]
-</code></pre></li></ol><h2 id=思路>思路</h2><p>用兩個指標（<code>p1</code>, <code>p2</code>）表示要反轉的區間（類似 sliding window 的感覺）。每反轉好一個區間就將兩個指標往前進 <code>k</code> 步，直到 <code>p2</code> 碰到 <code>nullptr</code>。</p><h2 id=first-version>First version</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>reverseKGroup</span>(ListNode<span style=color:#f92672>*</span> head, <span style=color:#66d9ef>int</span> k) {
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>  ListNode<span style=color:#f92672>*</span> newhead <span style=color:#f92672>=</span> <span style=color:#66d9ef>nullptr</span>;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>  ListNode<span style=color:#f92672>*</span> p1 <span style=color:#f92672>=</span> head, <span style=color:#f92672>*</span>p2 <span style=color:#f92672>=</span> p1, <span style=color:#f92672>*</span>p0 <span style=color:#f92672>=</span> <span style=color:#66d9ef>nullptr</span>;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; p2 <span style=color:#f92672>&amp;&amp;</span> i <span style=color:#f92672>&lt;</span> k<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>; <span style=color:#f92672>++</span>i){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>    p2 <span style=color:#f92672>=</span> p2<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>  }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>  <span style=color:#66d9ef>while</span>(p2){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>    reverseList(p1, p2);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span>    swap(p1, p2);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>    <span style=color:#66d9ef>if</span>(p0) p0<span style=color:#f92672>-&gt;</span>next <span style=color:#f92672>=</span> p1;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>    <span style=color:#66d9ef>else</span> newhead <span style=color:#f92672>=</span> p1;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>    p0 <span style=color:#f92672>=</span> p2;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; p2 <span style=color:#f92672>&amp;&amp;</span> i <span style=color:#f92672>&lt;</span> k; <span style=color:#f92672>++</span>i){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>      p1 <span style=color:#f92672>=</span> p1<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span>      p2 <span style=color:#f92672>=</span> p2<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>    }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span>  }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>  <span style=color:#66d9ef>return</span> newhead;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>}
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>reverseList</span>( ListNode<span style=color:#f92672>*</span> a, ListNode<span style=color:#f92672>*</span> b){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>  ListNode<span style=color:#f92672>*</span> pre <span style=color:#f92672>=</span> b<span style=color:#f92672>-&gt;</span>next,
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span>          <span style=color:#f92672>*</span> now <span style=color:#f92672>=</span> a,
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span>          <span style=color:#f92672>*</span> nxt<span style=color:#f92672>=</span> a<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>  <span style=color:#66d9ef>while</span>(now <span style=color:#f92672>&amp;&amp;</span> pre <span style=color:#f92672>!=</span> b){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span>    now<span style=color:#f92672>-&gt;</span>next <span style=color:#f92672>=</span> pre;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>    pre <span style=color:#f92672>=</span> now;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>    now <span style=color:#f92672>=</span> nxt;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>    <span style=color:#66d9ef>if</span>(nxt) nxt <span style=color:#f92672>=</span> nxt<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>  }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>  <span style=color:#66d9ef>return</span> pre;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>}
-</code></pre></div><p>這個版本雖然有過，但有幾點問題：</p><ol><li>為了維持 <code>p1</code> 在 <code>p2</code> 前面，多用了一個不必要的 <code>swap</code>。</li><li>既然每次 <code>p1</code> 都要給別人（第一次給 <code>newhead</code>，之後都給 <code>p0</code>），有沒有更簡潔的寫法？</li><li>為了反轉閉區間 <code>[a,b]</code> 用了修改的反轉函式，比一般的還要多跑一次，以確保最後一個節點 <code>b</code> 有轉到。這樣在在理解上比較不直觀。<ul><li>使用閉區間表示是希望 <code>p2 == nullptr</code> 只表示最後一段長度不夠的情形（不然必須要再檢查 index <code>i</code>，不管在迴圈外或迴圈內檢查都感覺有點雜亂）。</li></ul></li><li>有很多「將指標往後移動 <code>k</code> 個」的操作，根據 DRY 的原則，應該拉出來做成函式。</li></ol><h2 id=modified-version>Modified version</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>reverseKGroup</span>(ListNode<span style=color:#f92672>*</span> head, <span style=color:#66d9ef>int</span> k) {
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>    <span style=color:#66d9ef>if</span> (k <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>return</span> head;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>    ListNode<span style=color:#f92672>*</span>  p1 <span style=color:#f92672>=</span> head;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>    ListNode<span style=color:#f92672>*</span>  p2 <span style=color:#f92672>=</span> next(head, k<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>    ListNode<span style=color:#f92672>*</span>  newhead <span style=color:#f92672>=</span> <span style=color:#66d9ef>nullptr</span>;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>    ListNode<span style=color:#f92672>**</span> prelink <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>newhead;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>    <span style=color:#66d9ef>while</span>(p2){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span>        <span style=color:#75715e>// 1st iter  : Set newhead to p2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span style=color:#75715e></span>        <span style=color:#75715e>// otherwise : Connect the previous section with this one
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span style=color:#75715e></span>        <span style=color:#f92672>*</span>prelink <span style=color:#f92672>=</span> reverseRange(p1, p2);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>        <span style=color:#75715e>// now p1 points to the new tail, and p2 points to the new head
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span style=color:#75715e></span>        <span style=color:#75715e>// Points to the `next` of the tail of this section
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span style=color:#75715e></span>        prelink  <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>p1<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span>        <span style=color:#75715e>// Next section starts from the next of the tail
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span style=color:#75715e></span>        p1       <span style=color:#f92672>=</span> p1<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span>        <span style=color:#75715e>// Next section ends at the k-1th node after its head
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span style=color:#75715e></span>        p2       <span style=color:#f92672>=</span> next(p1, k<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span>    }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span>    <span style=color:#66d9ef>return</span> newhead;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span>}
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span>
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span style=color:#75715e>// Reverse a closed interval [a, b]
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span style=color:#75715e></span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>reverseRange</span>(ListNode<span style=color:#f92672>*</span> a, ListNode<span style=color:#f92672>*</span> b){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span>    <span style=color:#75715e>// Points `pre` to the node that `now` should connet to
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25</span><span style=color:#75715e></span>    ListNode<span style=color:#f92672>*</span> pre <span style=color:#f92672>=</span> b<span style=color:#f92672>-&gt;</span>next,
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26</span>            <span style=color:#f92672>*</span> now <span style=color:#f92672>=</span> a;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27</span>    <span style=color:#66d9ef>for</span>(ListNode<span style=color:#f92672>*</span> nxt <span style=color:#f92672>=</span> now<span style=color:#f92672>-&gt;</span>next; nxt <span style=color:#f92672>!=</span> b<span style=color:#f92672>-&gt;</span>next; nxt <span style=color:#f92672>=</span> nxt<span style=color:#f92672>-&gt;</span>next){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28</span>        now<span style=color:#f92672>-&gt;</span>next <span style=color:#f92672>=</span> pre;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29</span>        pre <span style=color:#f92672>=</span> exchange(now, nxt);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30</span>    }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31</span>    now<span style=color:#f92672>-&gt;</span>next <span style=color:#f92672>=</span> pre;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32</span>    <span style=color:#66d9ef>return</span> now;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33</span>}
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34</span>
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35</span><span style=color:#75715e>// Get the nth next node, stop if null
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36</span><span style=color:#75715e></span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>next</span>(ListNode<span style=color:#f92672>*</span> n, size_t k) {
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37</span>    <span style=color:#66d9ef>for</span>(size_t i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; n <span style=color:#f92672>&amp;&amp;</span> i <span style=color:#f92672>&lt;</span> k; <span style=color:#f92672>++</span>i)
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38</span>        n <span style=color:#f92672>=</span> n<span style=color:#f92672>-&gt;</span>next;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39</span>    <span style=color:#66d9ef>return</span> n;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40</span>}
-</code></pre></div><p>修正了之前提到的問題：</p><ol><li>將「<code>k</code> 為一」的狀況直接回傳，避免不必要的計算。</li><li>利用雙重指標來解決 <code>p0</code> 的問題，此處 <code>prelink</code> 可以理解為「上一段尾端的接口」。最一開始指向 <code>newhead</code>（算是長度為 0 的 linked list），因此在第一次迴圈會把第一段的頭「接到」 <code>newhead</code> 後；往後的迴圈會自動將上一段與這一段接好，不會動到 <code>newhead</code>。</li><li>利用「反轉後 <code>pre</code> 會接在 <code>head</code>」後面的性質，將 <code>b->next</code> 紀錄到 <code>pre</code> 。再將停止條件設為 <code>nxt == b->next</code>，用一般的反轉演算法來解。另外因為不會出現 <code>b</code> 為 <code>nullptr</code> 的狀況，因此省略檢查。</li><li>把「將指標往後移動 <code>k</code> 個」獨立出來，讓程式架構更清爽。</li></ol><h2 id=recursive-version>Recursive version</h2><p>偷看別人的解答後發現可以用遞迴來寫，來試試看。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span>ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>reverseKGroup</span>(ListNode<span style=color:#f92672>*</span> head, <span style=color:#66d9ef>int</span> k) {
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span>  <span style=color:#66d9ef>if</span>(k <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>return</span> head;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span>  <span style=color:#66d9ef>if</span>(ListNode<span style=color:#f92672>*</span> tail <span style=color:#f92672>=</span> next(head, k<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>); <span style=color:#f92672>!</span>tail){
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span>      <span style=color:#66d9ef>return</span> head;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span>  }<span style=color:#66d9ef>else</span>{
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span>      reverseRange(head, tail);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span>      <span style=color:#75715e>// now `tail` points to the new head
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span style=color:#75715e></span>      <span style=color:#75715e>//     `head` points to the new tail
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span style=color:#75715e></span>      head<span style=color:#f92672>-&gt;</span>next <span style=color:#f92672>=</span> reverseKGroup(head<span style=color:#f92672>-&gt;</span>next, k);
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span>      <span style=color:#66d9ef>return</span> tail;
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span>  }
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span>}
-</code></pre></div><p>遞迴真的能寫得很簡潔啊，只需要一個變數&mldr;</p><h2 id=想法>想法</h2><p>一開始是在每月挑戰寫到這題，寫完之後才發現是 hard 的題目。過去都感覺 hard 難到爆炸，這次自己解了一題後就比較有信心了（雖然這題應該算 hard 中的 easy）。</p><p>另外以 <code>Node</code> 為元素的 linked list 有型別 <code>L[Node]</code> ，這個型別可以視為以 <code>nullptr</code> 為單位元素的單群（Monoid）；也對應到 Haskell 裡面的 <code>List</code> 。如此一來「將 『指向 <code>nullptr</code> 的指標』 視為空 linked list」的概念就比較具體了。</p><p><a href=https://gist.github.com/akamayu-ouo/1f8d942946828d85898248fd8356df1a>Full Solution</a></p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/leetcode>leetcode</a></li><li><a href=/tags/linked-list>linked list</a></li></ul></nav></div><script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js></script><script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/lite.render.js></script><style>.vizsvg{max-width:85%;max-height:none;border-radius:1em;display:block;margin:auto}</style><script type=text/javascript>var viz=new Viz;let vizPrefix="graphviz",vizSelector="code[class=language-"+vizPrefix+"]";Array.prototype.forEach.call(document.querySelectorAll(vizSelector),function(a){viz.renderSVGElement(a.innerText).then(function(b){b.classList.add("vizsvg"),a.parentNode.parentNode.replaceChild(b,a.parentNode)})})</script></article></main><footer><hr><a class=soc href=https://github.com/akamayu-ouo title=GitHub><i data-feather=github></i></a>|⚡️
-2021 © Akamayu | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
+</code></pre></li>
+</ol>
+<h2 id="思路">思路</h2>
+<p>用兩個指標（<code>p1</code>, <code>p2</code>）表示要反轉的區間（類似 sliding window 的感覺）。每反轉好一個區間就將兩個指標往前進 <code>k</code> 步，直到 <code>p2</code> 碰到 <code>nullptr</code>。</p>
+<h2 id="first-version">First version</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseKGroup</span>(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> k) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  ListNode<span style="color:#f92672">*</span> newhead <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  ListNode<span style="color:#f92672">*</span> p1 <span style="color:#f92672">=</span> head, <span style="color:#f92672">*</span>p2 <span style="color:#f92672">=</span> p1, <span style="color:#f92672">*</span>p0 <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; p2 <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">&lt;</span> k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>i){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    p2 <span style="color:#f92672">=</span> p2<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">while</span>(p2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    reverseList(p1, p2);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    swap(p1, p2);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">if</span>(p0) p0<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p1;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">else</span> newhead <span style="color:#f92672">=</span> p1;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    p0 <span style="color:#f92672">=</span> p2;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; p2 <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">&lt;</span> k; <span style="color:#f92672">++</span>i){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      p2 <span style="color:#f92672">=</span> p2<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#66d9ef">return</span> newhead;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseList</span>( ListNode<span style="color:#f92672">*</span> a, ListNode<span style="color:#f92672">*</span> b){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  ListNode<span style="color:#f92672">*</span> pre <span style="color:#f92672">=</span> b<span style="color:#f92672">-&gt;</span>next,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>          <span style="color:#f92672">*</span> now <span style="color:#f92672">=</span> a,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>          <span style="color:#f92672">*</span> nxt<span style="color:#f92672">=</span> a<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  <span style="color:#66d9ef">while</span>(now <span style="color:#f92672">&amp;&amp;</span> pre <span style="color:#f92672">!=</span> b){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    now<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> pre;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    pre <span style="color:#f92672">=</span> now;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    now <span style="color:#f92672">=</span> nxt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#66d9ef">if</span>(nxt) nxt <span style="color:#f92672">=</span> nxt<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  <span style="color:#66d9ef">return</span> pre;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
+</code></pre></div><p>這個版本雖然有過，但有幾點問題：</p>
+<ol>
+<li>為了維持 <code>p1</code> 在 <code>p2</code> 前面，多用了一個不必要的 <code>swap</code>。</li>
+<li>既然每次 <code>p1</code> 都要給別人（第一次給 <code>newhead</code>，之後都給 <code>p0</code>），有沒有更簡潔的寫法？</li>
+<li>為了反轉閉區間 <code>[a,b]</code> 用了修改的反轉函式，比一般的還要多跑一次，以確保最後一個節點 <code>b</code> 有轉到。這樣在在理解上比較不直觀。
+<ul>
+<li>使用閉區間表示是希望 <code>p2 == nullptr</code> 只表示最後一段長度不夠的情形（不然必須要再檢查 index <code>i</code>，不管在迴圈外或迴圈內檢查都感覺有點雜亂）。</li>
+</ul>
+</li>
+<li>有很多「將指標往後移動 <code>k</code> 個」的操作，根據 DRY 的原則，應該拉出來做成函式。</li>
+</ol>
+<h2 id="modified-version">Modified version</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseKGroup</span>(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> k) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> head;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    ListNode<span style="color:#f92672">*</span>  p1 <span style="color:#f92672">=</span> head;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    ListNode<span style="color:#f92672">*</span>  p2 <span style="color:#f92672">=</span> next(head, k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    ListNode<span style="color:#f92672">*</span>  newhead <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    ListNode<span style="color:#f92672">**</span> prelink <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>newhead;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">while</span>(p2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#75715e">// 1st iter  : Set newhead to p2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"></span>        <span style="color:#75715e">// otherwise : Connect the previous section with this one
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span>        <span style="color:#f92672">*</span>prelink <span style="color:#f92672">=</span> reverseRange(p1, p2);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#75715e">// now p1 points to the new tail, and p2 points to the new head
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Points to the `next` of the tail of this section
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#75715e"></span>        prelink  <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>p1<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#75715e">// Next section starts from the next of the tail
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#75715e"></span>        p1       <span style="color:#f92672">=</span> p1<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#75715e">// Next section ends at the k-1th node after its head
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e"></span>        p2       <span style="color:#f92672">=</span> next(p1, k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#66d9ef">return</span> newhead;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#75715e">// Reverse a closed interval [a, b]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#75715e"></span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseRange</span>(ListNode<span style="color:#f92672">*</span> a, ListNode<span style="color:#f92672">*</span> b){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#75715e">// Points `pre` to the node that `now` should connet to
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#75715e"></span>    ListNode<span style="color:#f92672">*</span> pre <span style="color:#f92672">=</span> b<span style="color:#f92672">-&gt;</span>next,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            <span style="color:#f92672">*</span> now <span style="color:#f92672">=</span> a;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#66d9ef">for</span>(ListNode<span style="color:#f92672">*</span> nxt <span style="color:#f92672">=</span> now<span style="color:#f92672">-&gt;</span>next; nxt <span style="color:#f92672">!=</span> b<span style="color:#f92672">-&gt;</span>next; nxt <span style="color:#f92672">=</span> nxt<span style="color:#f92672">-&gt;</span>next){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        now<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> pre;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>        pre <span style="color:#f92672">=</span> exchange(now, nxt);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    now<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> pre;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    <span style="color:#66d9ef">return</span> now;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#75715e">// Get the nth next node, stop if null
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#75715e"></span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">next</span>(ListNode<span style="color:#f92672">*</span> n, size_t k) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#66d9ef">for</span>(size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; n <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">&lt;</span> k; <span style="color:#f92672">++</span>i)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        n <span style="color:#f92672">=</span> n<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    <span style="color:#66d9ef">return</span> n;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>}
+</code></pre></div><p>修正了之前提到的問題：</p>
+<ol>
+<li>將「<code>k</code> 為一」的狀況直接回傳，避免不必要的計算。</li>
+<li>利用雙重指標來解決 <code>p0</code> 的問題，此處 <code>prelink</code> 可以理解為「上一段尾端的接口」。最一開始指向 <code>newhead</code>（算是長度為 0 的 linked list），因此在第一次迴圈會把第一段的頭「接到」 <code>newhead</code> 後；往後的迴圈會自動將上一段與這一段接好，不會動到 <code>newhead</code>。</li>
+<li>利用「反轉後 <code>pre</code> 會接在 <code>head</code>」後面的性質，將 <code>b-&gt;next</code> 紀錄到 <code>pre</code> 。再將停止條件設為 <code>nxt == b-&gt;next</code>，用一般的反轉演算法來解。另外因為不會出現 <code>b</code> 為 <code>nullptr</code> 的狀況，因此省略檢查。</li>
+<li>把「將指標往後移動 <code>k</code> 個」獨立出來，讓程式架構更清爽。</li>
+</ol>
+<h2 id="recursive-version">Recursive version</h2>
+<p>偷看別人的解答後發現可以用遞迴來寫，來試試看。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">reverseKGroup</span>(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> k) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">if</span>(k <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> head;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#66d9ef">if</span>(ListNode<span style="color:#f92672">*</span> tail <span style="color:#f92672">=</span> next(head, k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); <span style="color:#f92672">!</span>tail){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      <span style="color:#66d9ef">return</span> head;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  }<span style="color:#66d9ef">else</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      reverseRange(head, tail);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      <span style="color:#75715e">// now `tail` points to the new head
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#75715e"></span>      <span style="color:#75715e">//     `head` points to the new tail
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"></span>      head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> reverseKGroup(head<span style="color:#f92672">-&gt;</span>next, k);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#66d9ef">return</span> tail;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
+</code></pre></div><p>遞迴真的能寫得很簡潔啊，只需要一個變數&hellip;</p>
+<h2 id="想法">想法</h2>
+<p>一開始是在每月挑戰寫到這題，寫完之後才發現是 hard 的題目。過去都感覺 hard 難到爆炸，這次自己解了一題後就比較有信心了（雖然這題應該算 hard 中的 easy）。</p>
+<p>另外以 <code>Node</code> 為元素的 linked list 有型別 <code>L[Node]</code> ，這個型別可以視為以 <code>nullptr</code> 為單位元素的單群（Monoid）；也對應到 Haskell 裡面的 <code>List</code> 。如此一來「將 『指向 <code>nullptr</code> 的指標』 視為空 linked list」的概念就比較具體了。</p>
+<p><a href="https://gist.github.com/akamayu-ouo/1f8d942946828d85898248fd8356df1a">Full Solution</a></p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/leetcode">leetcode</a></li>
+					
+					<li><a href="/tags/linked-list">linked list</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+        
+            
+                
+                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"> </script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/lite.render.js"> </script>
+<style>
+svg.vizsvg {
+    max-width: 85%;
+    max-height: none;
+    border-radius: 1em;
+    display: block;
+    margin: auto;
+};
+</style>
+<script type="text/javascript">
+    var viz = new Viz();
+    let vizPrefix = "graphviz";
+    let vizSelector =  "code[class=language-"+ vizPrefix +"]";
+    Array.prototype.forEach.call(document.querySelectorAll(vizSelector)
+            , function(x){
+                    viz.renderSVGElement(x.innerText)
+                        .then(function(svg){
+                                svg.classList.add("vizsvg");
+                                x.parentNode.parentNode.replaceChild(svg, x.parentNode);
+                         });
+                });
+</script>
+
+            
+        
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/akamayu-ouo" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Akamayu |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

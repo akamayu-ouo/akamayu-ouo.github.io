@@ -1,1 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MaerlutkeadS</title><link>https://akamayu-ouo.github.io/</link><description>Recent content on MaerlutkeadS</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Akamayu</copyright><lastBuildDate>Thu, 22 Jul 2021 17:39:40 +0800</lastBuildDate><atom:link href="https://akamayu-ouo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>[LeetCode] 25: Reverse Nodes in k-Group</title><link>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</link><pubDate>Thu, 22 Jul 2021 17:39:40 +0800</pubDate><guid>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</guid><description/></item><item><title>RSA encryption scheme</title><link>https://akamayu-ouo.github.io/posts/rsa_encryption_scheme/</link><pubDate>Sat, 09 Jan 2021 17:39:40 +0800</pubDate><guid>https://akamayu-ouo.github.io/posts/rsa_encryption_scheme/</guid><description/></item><item><title>Settings Related to Dwm</title><link>https://akamayu-ouo.github.io/posts/settings-related-to-dwm/</link><pubDate>Thu, 03 Dec 2020 01:15:58 +0800</pubDate><guid>https://akamayu-ouo.github.io/posts/settings-related-to-dwm/</guid><description>&lt;p>Notes about settings of my &lt;a href="https://dwm.suckless.org/">dwm&lt;/a>, &lt;a href="https://git.io/JILvA">dwmblocks&lt;/a>, &amp;hellip;&lt;/p></description></item><item><title>The Firt Post</title><link>https://akamayu-ouo.github.io/posts/firt_post/</link><pubDate>Fri, 27 Nov 2020 17:30:15 +0800</pubDate><guid>https://akamayu-ouo.github.io/posts/firt_post/</guid><description>The first post of this blog.</description></item><item><title>About</title><link>https://akamayu-ouo.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://akamayu-ouo.github.io/about/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MaerlutkeadS</title>
+    <link>https://akamayu-ouo.github.io/</link>
+    <description>Recent content on MaerlutkeadS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Akamayu</copyright>
+    <lastBuildDate>Mon, 02 Aug 2021 20:11:07 +0800</lastBuildDate><atom:link href="https://akamayu-ouo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[LeetCode] 23: Merge k Sorted Lists</title>
+      <link>https://akamayu-ouo.github.io/posts/leetcode-23-merge-k-sorted-lists/</link>
+      <pubDate>Mon, 02 Aug 2021 20:11:07 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/leetcode-23-merge-k-sorted-lists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 25: Reverse Nodes in k-Group</title>
+      <link>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</link>
+      <pubDate>Thu, 22 Jul 2021 17:39:40 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RSA encryption scheme</title>
+      <link>https://akamayu-ouo.github.io/posts/rsa_encryption_scheme/</link>
+      <pubDate>Sat, 09 Jan 2021 17:39:40 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/rsa_encryption_scheme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Settings Related to Dwm</title>
+      <link>https://akamayu-ouo.github.io/posts/settings-related-to-dwm/</link>
+      <pubDate>Thu, 03 Dec 2020 01:15:58 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/settings-related-to-dwm/</guid>
+      <description>&lt;p&gt;Notes about settings of my &lt;a href=&#34;https://dwm.suckless.org/&#34;&gt;dwm&lt;/a&gt;, &lt;a href=&#34;https://git.io/JILvA&#34;&gt;dwmblocks&lt;/a&gt;, &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Firt Post</title>
+      <link>https://akamayu-ouo.github.io/posts/firt_post/</link>
+      <pubDate>Fri, 27 Nov 2020 17:30:15 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/firt_post/</guid>
+      <description>The first post of this blog.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://akamayu-ouo.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

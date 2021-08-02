@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>[LeetCode] 23: Merge k Sorted Lists - MaerlutkeadS</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="[LeetCode] 23: Merge k Sorted Lists" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akamayu-ouo.github.io/posts/leetcode-23-merge-k-sorted-lists/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-02T20:11:07+08:00" />
+<meta property="article:modified_time" content="2021-08-02T20:11:07+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[LeetCode] 23: Merge k Sorted Lists"/>
+<meta name="twitter:description" content=""/>
+<script src="https://akamayu-ouo.github.io/js/feather.min.js"></script>
+	
+	
+        <link href="https://akamayu-ouo.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://akamayu-ouo.github.io/css/main.b81ecc221520255fd37e11500c217a1fa6fad6e7dc32c2960f2b8d62c1de15d5.css" />
+		<link rel="stylesheet" type="text/css" href="https://akamayu-ouo.github.io/css/dark.e2614a3a266b191b41b67f03b6c9b01f5d5f5a4d7d08a12e0400278dafe57452.css" media="(prefers-color-scheme: dark)" />
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://akamayu-ouo.github.io/">MaerlutkeadS</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+
+		<div class="title">
+			<h1 class="title">[LeetCode] 23: Merge k Sorted Lists</h1>
+			<div class="meta">Posted on Aug 2, 2021</div>
+		</div>
+		
+
+		<section class="body">
+			<ul>
+<li>Problem Link: <a href="https://leetcode.com/problems/merge-k-sorted-lists/">[↗]</a></li>
+<li>Difficulty: 🔴 Hard</li>
+<li>Problem description:</li>
+</ul>
+<blockquote>
+<p>You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+Merge all the linked-lists into one sorted linked-list and return it.</p>
+</blockquote>
+<ul>
+<li>Examples:</li>
+</ul>
+<ol>
+<li>
+<p>Example 1:</p>
+<pre><code class="language-graphviz" data-lang="graphviz">digraph G{
+    rankdir=LR;
+    nodesep=.3;
+    node[shape=none];
+    node[label=&quot;output:&quot;] out;
+    node[label=&quot;input:&quot;] in;
+    node[colorscheme=&quot;pastel19&quot;, style=filled, shape=circle];
+    node[fillcolor=1];
+    node[label=&quot;1&quot;] a1;
+    node[label=&quot;4&quot;] a2;
+    node[label=&quot;5&quot;] a3;
+    node[fillcolor=2];
+    node[label=&quot;1&quot;] b1;
+    node[label=&quot;3&quot;] b2;
+    node[label=&quot;4&quot;] b3;
+    node[fillcolor=3];
+    node[label=&quot;2&quot;] c1;
+    node[label=&quot;6&quot;] c2;
+    node[fillcolor=9];
+    node[label=&quot;1&quot;] d1;
+    node[label=&quot;4&quot;] d5;
+    node[label=&quot;5&quot;] d7;
+    node[label=&quot;1&quot;] d2;
+    node[label=&quot;3&quot;] d4;
+    node[label=&quot;4&quot;] d6;
+    node[label=&quot;2&quot;] d3;
+    node[label=&quot;6&quot;] d8;
+    a1-&gt;a2-&gt;a3;
+    b1-&gt;b2-&gt;b3;
+    c1-&gt;c2;
+    d1-&gt;d2-&gt;d3-&gt;d4-&gt;d5-&gt;d6-&gt;d7-&gt;d8;
+    edge [len=0.1, style=invis];
+    a3-&gt;b1;
+    b3-&gt;c1;
+    in-&gt;a1;
+    out-&gt;d1;
+}
+</code></pre><pre><code>Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+</code></pre></li>
+<li>
+<p>Example 2:</p>
+<pre><code>Input: lists = []
+Output: []
+</code></pre></li>
+<li>
+<p>Example 3:</p>
+<pre><code>Input: lists = [[]]
+Output: []
+</code></pre></li>
+</ol>
+<h2 id="思路">思路</h2>
+<p>基本上有兩個重點：</p>
+<ol>
+<li>Merge sorted lists: 如何用 $O(m+n)$ 的時間將長度為 $m$ 與 $n$ 的 sorted list 合併為一條。
+這不難，分別用兩個指標遍歷兩個 Lists ，把數值較小的接到結果後面。
+若有一個比較早結束，就直接把另一個剩下的部份接到結果後面。</li>
+<li>Divide and conquer: 減少每次合併時候處裡的 List 長度。
+不依序將 $k$ 個 Lists 接起來，而是先每 2 個接、每 4 個接&hellip;。</li>
+</ol>
+<p>不明白為什麼是 Hard &hellip;</p>
+<h2 id="merge-sorted-lists">Merge sorted lists</h2>
+<p>演算法不難，那就來努力寫漂亮的程式碼吧！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">static</span> ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">merge</span>(ListNode<span style="color:#f92672">*</span> a, ListNode<span style="color:#f92672">*</span> b) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    ListNode <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>, <span style="color:#f92672">**</span>link <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>result;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#66d9ef">while</span>(a <span style="color:#f92672">&amp;&amp;</span> b){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> p <span style="color:#f92672">=</span> (a<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">&lt;</span> b<span style="color:#f92672">-&gt;</span>val)<span style="color:#f92672">?</span> a : b;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        <span style="color:#f92672">*</span>link <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        link <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>((<span style="color:#f92672">*</span>link)<span style="color:#f92672">-&gt;</span>next);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#f92672">*</span>link <span style="color:#f92672">=</span> (a)<span style="color:#f92672">?</span> a : (b)<span style="color:#f92672">?</span> b : <span style="color:#66d9ef">nullptr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#66d9ef">return</span> result;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>}
+</code></pre></div><ol>
+<li>如同上次所題，空指標可視為長度零的 link-list，雙重指標可以當作「指向結果的接口的指標」。</li>
+<li>利用 reference （第 4 行），來操作要被加進結果的 node，減少更新被拔掉的 List 的指標時的判斷。</li>
+</ol>
+<h2 id="divide-and-conquer">Divide and conquer</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">mergeKLists</span>(vector<span style="color:#f92672">&lt;</span>ListNode<span style="color:#f92672">*&gt;&amp;</span> lists) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> lists.size();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; len <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>n; len <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, j <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> len<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; j <span style="color:#f92672">&lt;</span> n ; i <span style="color:#f92672">+=</span> len, j <span style="color:#f92672">+=</span> len)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>            lists[i] <span style="color:#f92672">=</span> merge(lists[i], lists[j]);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#66d9ef">return</span> n <span style="color:#f92672">?</span> lists[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+</code></pre></div><p>基本上就是把 index 數好就好，不過要注意在輸入為 <code>[]</code> 的時候需要特別判斷。</p>
+<h3 id="使用-stdreduce">使用 std::reduce</h3>
+<p>另外因為上面寫的 <code>merge</code> 同時有交換律與結合律，也就是對所有的 $a,b,c$
+$$
+merge(a,b) = merge(b,a)  \\<br>
+merge(a,merge(b, c)) = merge(merge(a, b),c)
+$$
+因此可以使用 STL 的 <a href="https://en.cppreference.com/w/cpp/algorithm/reduce"><code>std::reduce</code></a>，它是 Cpp17 加入的演算法，並在 Cpp20 成為平行演算法之一。
+會要求交換律與結合律是因為 <code>std::reduce</code> 能以任意的順序來結合（？）每個元素（詳情可見 <a href="https://blog.tartanllama.xyz/accumulate-vs-reduce/">std::accumulate vs. std::reduce</a>）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">mergeKLists</span>(vector<span style="color:#f92672">&lt;</span>ListNode<span style="color:#f92672">*&gt;&amp;</span> lists) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>reduce(std<span style="color:#f92672">::</span>execution<span style="color:#f92672">::</span>par, std<span style="color:#f92672">::</span>begin(lists), std<span style="color:#f92672">::</span>end(lists),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>                        <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span>ListNode<span style="color:#f92672">*&gt;</span>(<span style="color:#66d9ef">nullptr</span>), Solution<span style="color:#f92672">::</span>merge);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+</code></pre></div><p>另外由於初始值（上面的 <code>nullptr</code>）的型別會直接作為回傳值（與中間值）的型別，所以需要特別轉型成 <code>ListNode*</code>。</p>
+<p>其中的 <code>std::execution::par</code> 是 Cpp20 加入的<a href="https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag">平行化策略</a>（？），另外還有 <code>seq</code>、<code>unseq</code> 以及 <code>par_unseq</code> 幾種策略可以選擇。</p>
+<h3 id="使用遞迴">使用遞迴</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">mergeKLists</span>(<span style="color:#66d9ef">const</span> vector<span style="color:#f92672">&lt;</span>ListNode<span style="color:#f92672">*&gt;&amp;</span> lists) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> lists.size(); n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nullptr</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        <span style="color:#66d9ef">return</span> lists.front();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#66d9ef">else</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#66d9ef">auto</span> a <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>begin(lists),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>             b <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>end(lists),
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>             m <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>next(a, std<span style="color:#f92672">::</span>distance(a, b)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>             <span style="color:#75715e">//= std::midpoint(a, b) // Cpp20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> merge(Recursive({a, m}), Recursive({m, b}));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+</code></pre></div><p>這個寫法有個問題，因為遞迴的時候會複製新的 <code>std::vector&lt;ListNode*&gt;</code> ，這也表示參數一定要用 const reference ，不能用 reference。不過在 Cpp 20 應該可以用 <code>std::ranges</code> 解決這些問題，（或是要自己定一個類似的 struct 也不難）。</p>
+<p><a href="https://gist.github.com/akamayu-ouo/ef0d826d2d06a9e52d725643baef40a1">Full Solution</a></p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/leetcode">leetcode</a></li>
+					
+					<li><a href="/tags/linked-list">linked list</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+        
+            
+                
+                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"> </script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/lite.render.js"> </script>
+<style>
+svg.vizsvg {
+    max-width: 85%;
+    max-height: none;
+    border-radius: 1em;
+    display: block;
+    margin: auto;
+};
+</style>
+<script type="text/javascript">
+    var viz = new Viz();
+    let vizPrefix = "graphviz";
+    let vizSelector =  "code[class=language-"+ vizPrefix +"]";
+    Array.prototype.forEach.call(document.querySelectorAll(vizSelector)
+            , function(x){
+                    viz.renderSVGElement(x.innerText)
+                        .then(function(svg){
+                                svg.classList.add("vizsvg");
+                                x.parentNode.parentNode.replaceChild(svg, x.parentNode);
+                         });
+                });
+</script>
+
+            
+                
+                <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath:  [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$']],
+      processEscapes: true,
+    }
+  });
+</script>
+
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+            
+        
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/akamayu-ouo" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Akamayu |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

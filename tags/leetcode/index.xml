@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>leetcode on MaerlutkeadS</title><link>https://akamayu-ouo.github.io/tags/leetcode/</link><description>Recent content in leetcode on MaerlutkeadS</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Akamayu</copyright><lastBuildDate>Thu, 22 Jul 2021 17:39:40 +0800</lastBuildDate><atom:link href="https://akamayu-ouo.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>[LeetCode] 25: Reverse Nodes in k-Group</title><link>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</link><pubDate>Thu, 22 Jul 2021 17:39:40 +0800</pubDate><guid>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leetcode on MaerlutkeadS</title>
+    <link>https://akamayu-ouo.github.io/tags/leetcode/</link>
+    <description>Recent content in leetcode on MaerlutkeadS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Akamayu</copyright>
+    <lastBuildDate>Mon, 02 Aug 2021 20:11:07 +0800</lastBuildDate><atom:link href="https://akamayu-ouo.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[LeetCode] 23: Merge k Sorted Lists</title>
+      <link>https://akamayu-ouo.github.io/posts/leetcode-23-merge-k-sorted-lists/</link>
+      <pubDate>Mon, 02 Aug 2021 20:11:07 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/leetcode-23-merge-k-sorted-lists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[LeetCode] 25: Reverse Nodes in k-Group</title>
+      <link>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</link>
+      <pubDate>Thu, 22 Jul 2021 17:39:40 +0800</pubDate>
+      
+      <guid>https://akamayu-ouo.github.io/posts/leetcode-25-reverse-nodes-in-k-group/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
